@@ -1,6 +1,8 @@
+@import '../Base';
+
 .header {
     align-items: center;
-    background: #8f57fd;
+    background: $gradiente;
     color: white;
     display: flex;
     height: 100px;
@@ -11,7 +13,7 @@
   
   .header__img {
     margin-left: 30px;
-    width: 200px;
+    width: 80px;
   }
   
   .header__menu {

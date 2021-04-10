@@ -1,0 +1,31 @@
+.form-container{
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(255,255,255, .5);
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,.5);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,.5);
+    box-shadow: 10px 10px 5px -6px rgba(0,0,0,.5);
+    border-radius: 10px;
+    width: 80%;
+    overflow: hidden;
+    .form-control{
+        margin: 1rem 0;
+        label{
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        input, textarea{
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+        input{
+            height: 36px;
+        }
+    }
+    
+}

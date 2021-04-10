@@ -1,0 +1,36 @@
+@import '../Base.scss';
+
+.posts-container{
+    margin: 1rem 30px;
+    .add-posts{
+        display: flex;
+        justify-content: flex-end;
+        a{
+            padding: 1rem;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255,255,255, .5);
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+            display: flex;
+            align-items: center;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            &:hover{
+                background: #fff;
+            }
+            img{
+                width: 20px;
+                margin-right: .5rem;
+            }
+        }
+    }
+    .posts{
+        margin: 1rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

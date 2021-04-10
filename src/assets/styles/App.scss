@@ -1,12 +1,41 @@
-@import "./Vars.scss";
-@import "./Media.scss";
+@import './Base.scss';
 
 body {
     margin: 0;
-    font-family: $theme-font;
-    background: $main-color;
+    font-family: 'Roboto', sans-serif;
+    background: $gradiente;
+    font-size: 16px;
 }
   
 * {
     box-sizing: border-box;
+}
+
+h1{
+    color: #fff;
+    font-family: $font-post-title;
+    margin-bottom: 0;
+}
+
+.form-actions{
+    text-align: right;
+    margin-bottom: 1rem;
+    .btn{
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .3s;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        margin-right: 1rem;
+        &.primary{
+            background: #11998e;
+        }
+        &.danger{
+            background: linear-gradient(to right, rgb(211, 16, 39), rgb(234, 56, 77));
+        }
+    }
 }

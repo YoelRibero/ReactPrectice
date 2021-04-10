@@ -1,69 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Home from './Home';
+import AddPosts from './AddPosts';
+import EditPosts from './EditPosts';
 import Header from '../components/Header';
-import Search from '../components/Search';
-import Categories from '../components/Categories';
-import Carousel from '../components/Carousel';
-import CarouselItem from '../components/CarouselItem';
 import Footer from '../components/Footer';
-import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
-
-const API = 'http://localhost:3000/initalState';
 
 const App = () => {
 
-    // const [ videos, setVideos ] = useState({
-    //     mylist: [], trends: [], originals: []
-    // });
-
-    // useEffect( () => {
-    //     fetch(API)
-    //         .then(response => response.json())
-    //         .then(data => setVideos(data));
-    // }, [] );
-
-    // useEffect( () => {
-    //     fetch('http://localhost:3000/initalState')
-    //         .then(response => response.json())
-    //         .then(data => setVideos(data));
-    // }, [] );
-
-    const initialState = useInitialState(API);
-
     return(
-        <div className="App">
+        <BrowserRouter>
             <Header />
-            <Search />
-
-            {initialState.mylist.length > 0 &&
-                <Categories title="Mi Lista">
-                    <Carousel>
-                        {initialState.mylist.map(item =>
-                            <CarouselItem key={item.id} {...item} />
-                        )}
-                    </Carousel>
-                </Categories>
-            }
-
-            <Categories title="Tendencias">
-                <Carousel>
-                    {initialState.trends.map(item =>
-                        <CarouselItem key={item.id} {...item} />
-                    )}                   
-                </Carousel>
-            </Categories>
-
-            <Categories title="Originales de Platzi Video">
-                <Carousel>
-                    {initialState.originals.map(item =>
-                        <CarouselItem key={item.id} {...item} />
-                    )}
-                </Carousel>
-            </Categories>
-
+			<Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/posts/agregar" component={AddPosts} />
+                <Route exact path="/posts/editar" component={EditPosts} />
+            </Switch>
             <Footer />
-        </div> 
+        </BrowserRouter>
     );
 }
 
